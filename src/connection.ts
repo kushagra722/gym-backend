@@ -7,10 +7,10 @@ import constants from './constants';
 mongoose.connect(URL).then(async (connection: any) => {
 
 
-  const admin = await db.User.findOne({ scope: constants.SCOPE.ADMIN });
+  const admin = await db.User.findOne({email: 'gym1@admin.com' });
   if (!admin) {
     await db.User.create({
-      email: 'gym@admin.com',
+      email: 'gym1@admin.com',
       password: password,
       scope: '1',
     })
